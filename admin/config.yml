@@ -15,6 +15,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
 
   - name: 'pages'
     label: 'Pages'
@@ -34,13 +35,14 @@ collections:
     editor:
       preview: false
     files:
-      - label: 'Navigation'
-        name: 'navigation'
-        file: '_data/navigation.yml'
+      - label: 'Menus'
+        name: 'menus'
+        file: '_data/menus.yml'
         fields:
-          - label: 'Navigation Items'
+          - label: 'Menu Items'
             name: 'items'
             widget: 'list'
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Link, name: link, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Url, name: url, widget: string}
+              - {label: External, name: external, widget: boolean, default: false}
