@@ -18,21 +18,78 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+title: Adam Boaler
+description: >- # site description
+  Full stack web developer from the UK. Open-source enthusiast, Python aficionado. See my projects <a href="https://github.com/adamb70" target="_blank" rel="noopener">on Github</a>.
+lang: en-GB # default lang
+timezone: Europe/London # set your timezone
+mode: dark # default theme "dark" | "light"
+
+# Profile settings
+author:
+  name: Adam Boaler
+  bio: >- # tell to the world
+    Full stack web developer from the UK. Open-source enthusiast, Python aficionado. See my projects <a href="https://github.com/adamb70" target="_blank" rel="noopener">on Github</a>.
+  username: Adam Boaler # general username
+  github: adamb70 # github username
+  # twitter: username # twitter username
+  # facebook: username # facebook username
+  # email: your-email@email.com # email adress
+  avatar: /assets/img/avatar.jpg
+
+# URL settings
+url: "https://boaler.uk"
+baseurl:
+permalink: /:title/
+google_analytics: # leave blank if not using
+fb_appid:
+
+# Collection setting
+collections:
+  posts:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Homepage limit posts
+number_of_posts: 5
 
 # Build settings
-theme: minima
+# theme: klise
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles
+
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -41,15 +98,16 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - lighthouse.png
+  - klise-*.gem
+  - klise.gemspec
