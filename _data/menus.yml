@@ -8,6 +8,3 @@ items:
   - title: About
     url: /about/
     external: false
-  - external: true
-    title: test
-    url: test
