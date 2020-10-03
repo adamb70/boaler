@@ -1,9 +1,6 @@
 <nav class="post-nav">
   {% if page.previous %}
-  <a
-    class="post-nav-item post-nav-prev"
-    href="{{ page.previous | relative_url }}"
-  >
+  <a class="post-nav-item post-nav-prev" href="{{ page.previous | relative_url }}">
     <div class="nav-arrow">Previous</div>
     <span class="post-title">{{ page.previous.title }}</span>
   </a>
